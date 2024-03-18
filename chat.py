@@ -39,7 +39,7 @@ def chat_view():
 TEMPLATE = """
 <!doctype html>
 <html>
-<head><title>Chat powered by OpenAI</title></head>
+<head><title>Chat powered by Moby</title></head>
 <body>
     <h2>Chat with Gizmo</h2>
     <form method="post">
@@ -54,4 +54,4 @@ TEMPLATE = """
 """
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=False)
