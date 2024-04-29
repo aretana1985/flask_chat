@@ -19,7 +19,7 @@ def chat_view():
         user_message = request.form['user_input']
         try:
             response = client.chat.completions.create(
-                model="gpt-4-turbo-preview",
+                model="gpt-4",
                 messages=[{"role": "user", "content": user_message}],
             )
             # Assuming 'response' has an attribute 'choices' which is a list,
