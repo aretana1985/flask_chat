@@ -65,15 +65,16 @@ def parts_search():
 TEMPLATE = """
 <!doctype html>
 <html>
-<head><title>Home</title></head>
+<head><title>Chat powered by Moby</title></head>
 <body>
-    <h2>Welcome to the Utility System</h2>
-
-    <ul>
-        <li><a href="/email">Email Improve</a></li>
-        <li><a href="/parts">Parts Search</a></li>
-        <li><a href="/find-rep">Find a Rep</a></li>
-    </ul>
+    <h2>Email Assistant</h2>
+    <form method="post">
+        <input type="text" name="user_input" autofocus>
+        <input type="submit" value="Send">
+    </form>
+    {% if chat_response %}
+    <p><b>Response:</b> {{ chat_response }}</p>
+    {% endif %}
 </body>
 </html>
 """
