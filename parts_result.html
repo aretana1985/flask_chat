@@ -1,0 +1,16 @@
+<!doctype html>
+<html>
+<head><title>Part Results</title></head>
+<body>
+    <h2>Part Information</h2>
+    <p>Part Number: {{ part_number }}</p>
+
+    <ul>
+        {% for detail in part_details %}
+            <li>{{ detail }}</li>
+        {% endfor %}
+    </ul>
+
+    <a href="/">Go Back</a>
+</body>
+</html>
