@@ -41,7 +41,7 @@ TEMPLATE = """
 <html>
 <head><title>Chat powered by Moby</title></head>
 <body>
-    <h2>Chat with Gizmo</h2>
+    <h2>Grammar Improve Chat</h2>
     <form method="post">
         <input type="text" name="user_input" autofocus>
         <input type="submit" value="Send">
