@@ -17,7 +17,7 @@ client = OpenAI(api_key=os.getenv('APIKEY'))
 # Home page route
 @app.route('/')
 def home():
-    return render_template('chat.html')
+    return render_template('home.html')
 
 # Route for Email Improve functionality
 @app.route('/email', methods=['GET', 'POST'])
@@ -38,7 +38,7 @@ def chat_view():
             ai_message = "Sorry, I could not fetch a response due to an error."
             print(traceback.format_exc())  # Print the full traceback for debugging
 
-    return render_template_string(TEMPLATE, chat_response=ai_message)
+    return render_template('chat.html', chat_response=ai_message)
 
 # Route for Parts Search functionality
 @app.route('/parts', methods=['GET', 'POST'])
