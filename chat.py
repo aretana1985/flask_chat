@@ -15,12 +15,12 @@ app = Flask(__name__)
 client = OpenAI(api_key=os.getenv('APIKEY'))
 
 # Home page route
-@app.route('/chat')
+@app.route('/')
 def home():
     return render_template('home.html')
 
 # Route for Email Improve functionality
-@app.route('/email', methods=['GET', 'POST'])
+@app.route('/chat', methods=['GET', 'POST'])
 def chat_view():
     ai_message = ""  # Initialize ai_message to an empty string
     if request.method == 'POST':
