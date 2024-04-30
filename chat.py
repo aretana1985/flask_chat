@@ -15,7 +15,7 @@ app = Flask(__name__)
 client = OpenAI(api_key=os.getenv('APIKEY'))
 
 # Home page route
-@app.route('/')
+@app.route('/chat')
 def home():
     return render_template('home.html')
 
