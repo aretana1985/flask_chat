@@ -17,7 +17,7 @@ client = OpenAI(api_key=os.getenv('APIKEY'))
 # Home page route
 @app.route('/')
 def home():
-    return render_template('home.html')
+    return render_template('chat.html')
 
 # Route for Email Improve functionality
 @app.route('/email', methods=['GET', 'POST'])
