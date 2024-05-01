@@ -1,13 +1,15 @@
 <!doctype html>
 <html>
-<head><title>Parts Search</title></head>
+<head><title>Chat powered by Moby</title></head>
 <body>
-    <h2>Search for a Part</h2>
-
-    <form action="/parts" method="POST">
-        <label for="part_number">Enter Part Number:</label>
-        <input type="text" name="part_number" id="part_number" required>
-        <button type="submit">Search</button>
+    <h2>Parts Comparison</h2>
+    <h1>Please Insert your competition part number or specs and request a Lenovo Comparable </h1>
+    <form method="post">
+        <input type="text" name="user_input" autofocus>
+        <input type="submit" value="Look for Lenovo Part Number">
     </form>
+    {% if chat_response %}
+    <p><b>Response:</b> {{ chat_response }}</p>
+    {% endif %}
 </body>
 </html>

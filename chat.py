@@ -22,7 +22,7 @@ def home():
 # Route for Email Improve functionality
 @app.route('/chat', methods=['GET', 'POST'])
 def chat_view():
-    ai_message = ""  # Initialize ai_message to an empty string
+    ai_message = "Hi , please  add your email so I can look into it"  # Initialize ai_message to an empty string
     if request.method == 'POST':
         user_message = request.form['user_input']
         try:
@@ -43,6 +43,7 @@ def chat_view():
 # Route for Parts Search functionality
 @app.route('/parts', methods=['GET', 'POST'])
 def parts_search():
+    ai_message= "Please add  competition part number or specs and ask for your Lenovo Comparable"
     if request.method == 'POST':
         user_message = request.form['user_input']
         try:
@@ -64,13 +65,13 @@ def parts_search():
 TEMPLATE = """
 <!doctype html>
 <html>
-<head><title>Home</title></head>
+<head><title>Gizmodes</title></head>
 <body>
-    <h2>Welcome to Moby Chat</h2>
+    <h2>Please select one of our CHat Rooms</h2>
 
     <ul>
         <li><a href="/email">Email Improve</a></li>
-        <li><a href="/parts">Parts Search</a></li>
+        <li><a href="/parts">Parts Comparison</a></li>
         <li><a href="/find-rep">Find a Rep</a></li>
     </ul>
 </body>
