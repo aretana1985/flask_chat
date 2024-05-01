@@ -59,7 +59,7 @@ def parts_search():
             ai_message = "Sorry, I could not fetch a response due to an error."
             print(traceback.format_exc())  # Print the full traceback for debugging
 
-    return render_template('parts_search.html')
+    return render_template('parts_search.html',chat_response=ai_message)
 
 # Add your TEMPLATE variable here
 TEMPLATE = """
