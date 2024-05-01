@@ -44,20 +44,19 @@ def chat_view():
 @app.route('/parts', methods=['GET', 'POST'])
 def parts_search():
     if request.method == 'POST':
-        part_number = request.form['part_number']
-        
-        # Fetch data from StockInTheChannel
-        response = requests.get(f'https://us.stockinthechannel.com/Search?Query={part_number}')
-        if response.status_code == 200:
-            # Parse the page with BeautifulSoup
-            soup = BeautifulSoup(response.content, 'html.parser')
-            
-            # Extract part information (this logic may vary depending on the actual page structure)
-            part_details = [item.text.strip() for item in soup.select('.some-css-selector')] # Replace '.some-css-selector' with actual selector for part info
-        else:
-            part_details = ["Unable to fetch part information."]
-        
-        return render_template('parts_result.html', part_number=part_number, part_details=part_details)
+        user_message = request.form['user_input']
+        try:
+            response = client.chat.completions.create(
+                model="gpt-4",
+                messages=[{"role": "user", "content": user_message}],
+            )
+            if response.choices:
+                ai_message = response.choices[0].message.content
+            else:
+                ai_message = "No response from AI."
+        except Exception as e:
+            ai_message = "Sorry, I could not fetch a response due to an error."
+            print(traceback.format_exc())  # Print the full traceback for debugging
 
     return render_template('parts_search.html')
 
